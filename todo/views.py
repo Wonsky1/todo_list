@@ -31,6 +31,6 @@ class TagsListView(generic.ListView):
 
 def change_status(request: HttpRequest, pk: int) -> HttpResponseRedirect:
     task = Task.objects.get(id=pk)
-    task.done = not task.done
+    task.is_done = not task.is_done
     task.save()
     return HttpResponseRedirect(reverse("todo:task-list"))
