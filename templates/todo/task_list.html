@@ -17,6 +17,8 @@
       <p>
         Tags: {{ task.tags.all|join:", " }}
       </p>
+      <a href="{% url 'todo:task-update' pk=task.id %}" class="btn btn-secondary btn-sm">Update</a>
+      <a href="{% url 'todo:task-delete' pk=task.id %}" class="btn btn-danger btn-sm">Delete</a>
     {% endfor %}
   {% else %}
     <h2>There are no tasks</h2>
